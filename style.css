@@ -1,0 +1,178 @@
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  background: var(--Cream);
+}
+/* variables*/
+:root {
+  --Soft-red: hsl(10, 79%, 65%);
+  --Cyan: hsl(186, 34%, 60%);
+  --Dark-brown: hsl(25, 47%, 15%);
+  --Medium-brown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+/*due to a lot of different flex directions these are used as tags */
+.flex {
+  display: flex;
+}
+.horizontal {
+  flex-direction: row;
+}
+.vertical {
+  flex-direction: column;
+}
+.vertical-reverse {
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.padding {
+  padding: 1rem 2rem;
+}
+.border-radius {
+  border-radius: 1rem;
+}
+.cards {
+  width: 20rem;
+}
+
+/* TOP-CARD */
+.top-card {
+  background: var(--Soft-red);
+  color: var(--Cream);
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.my-balance {
+  font-size: 0.85rem;
+}
+.my-balance-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding-top: 0.4rem;
+}
+
+.section-2-circle-1 {
+  position: absolute;
+  margin-left: -1rem;
+  background: transparent;
+  border: 0.1rem solid var(--Cream);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+.section-2-circle-2 {
+  background: var(--Dark-brown);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 0.1rem solid var(--Dark-brown);
+}
+
+/*BOTTOM CARD */
+.bottom-card {
+  background: var(--Very-pale-orange);
+  padding: 0.5rem 2rem 1rem 2rem;
+  color: var(--Dark-brown);
+  /* height: 15rem; */
+}
+.bottom-card-title {
+  font-weight: 700;
+  color: var(--Dark-brown);
+  margin-bottom: 2rem;
+}
+.bottom-card-chart-main {
+  justify-content: center;
+}
+.bottom-card-chart {
+  padding-right: 1.2rem;
+  width: 1.2rem;
+  align-items: center;
+  color: var(--Medium-brown);
+  justify-content: end;
+}
+.bottom-card-chart:last-child {
+  padding-right: 0rem;
+}
+.bar {
+  height: 4rem;
+  width: 1.8rem;
+  background: var(--Soft-red);
+  border-radius: 0.2rem;
+}
+.chart-x-axis {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.6rem;
+}
+
+.chart-label {
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem;
+  color: var(--Cream);
+  width: 2.5rem;
+  height: 1.4rem;
+  margin-bottom: 0.2rem;
+  border-radius: 0.2rem;
+  background: var(--Dark-brown);
+}
+.chart-col-1-label,
+.chart-col-2-label,
+.chart-col-3-label,
+.chart-col-4-label,
+.chart-col-5-label,
+.chart-col-6-label,
+.chart-col-7-label {
+  opacity: 0;
+}
+.chart-col-1:hover ~ .chart-col-1-label,
+.chart-col-2:hover ~ .chart-col-2-label,
+.chart-col-3:hover ~ .chart-col-3-label,
+.chart-col-4:hover ~ .chart-col-4-label,
+.chart-col-5:hover ~ .chart-col-5-label,
+.chart-col-6:hover ~ .chart-col-6-label,
+.chart-col-7:hover ~ .chart-col-7-label {
+  opacity: 1;
+}
+
+/* Bottom card last section */
+.bottom-card-last-section {
+  border-top: 0.01rem solid var(--Medium-brown);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.bottom-card-total {
+  font-size: 0.7rem;
+  margin: 0;
+}
+.bottom-card-total-price {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.bottom-card-total-section {
+  justify-content: space-between;
+}
+.bottom-card-total-price-change {
+  font-weight: 700;
+}
+
+.bottom-card-total-price-change,
+.bottom-card-total-price-change-text {
+  font-size: 0.7rem;
+  text-align: end;
+}
+.bottom-card-total-price,
+.bottom-card-total-price-change,
+.bottom-card-total-price-change-text {
+  margin: 0;
+}

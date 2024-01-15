@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Expenses chart component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="flex">
+    <main role="main">
+      <article class="cards flex vertical">
+        <!--two sections to be flexed-->
+        <section class="top-card flex horizontal padding border-radius">
+          <!-- two divs to be flexed-->
+          <div class="top-card-section-1-my-balance">
+            <div class="my-balance">My balance</div>
+            <div class="my-balance-price">$921.48</div>
+          </div>
+          <div class="top-card-section-2-two-circles flex horizontal">
+            <div class="section-2-circle-1"></div>
+            <div class="section-2-circle-2"></div>
+          </div>
+        </section>
+        <section class="bottom-card padding border-radius">
+          <h1 class="bottom-card-title">Spending - Last 7 days</h1>
+          <div class="bottom-card-chart-main flex horizontal">
+            <!-- flex horizontally first on all bars then vertically on bar and label-->
+            <div class="bottom-card-chart col-1 flex vertical">
+              <div class="flex vertical-reverse">
+                <div class="chart-col-1 bar"></div>
+                <div class="chart-col-1-label chart-label flex"></div>
+              </div>
+
+              <p class="chart-x-axis">mon</p>
+            </div>
+            <div class="bottom-card-chart col-2 flex vertical">
+              <div class="flex vertical-reverse">
+                <div class="chart-col-2 bar"></div>
+                <div class="chart-col-2-label chart-label flex"></div>
+              </div>
+
+              <p class="chart-x-axis">tue</p>
+            </div>
+            <div class="bottom-card-chart col-3 flex vertical">
+              <div class="flex vertical-reverse">
+                <div class="chart-col-3 bar"></div>
+                <div class="chart-col-3-label chart-label flex"></div>
+              </div>
+
+              <p class="chart-x-axis">wed</p>
+            </div>
+            <div class="bottom-card-chart col-4 flex vertical">
+              <div class="flex vertical-reverse">
+                <div class="chart-col-4 bar"></div>
+                <div class="chart-col-4-label chart-label"></div>
+              </div>
+
+              <p class="chart-x-axis">thu</p>
+            </div>
+            <div class="bottom-card-chart col-5 flex vertical">
+              <div class="flex vertical-reverse">
+                <div class="chart-col-5 bar"></div>
+                <div class="chart-col-5-label chart-label flex"></div>
+              </div>
+
+              <p class="chart-x-axis">fri</p>
+            </div>
+            <div class="bottom-card-chart col-6 flex vertical">
+              <div class="flex vertical-reverse">
+                <div class="chart-col-6 bar"></div>
+                <div class="chart-col-6-label chart-label flex"></div>
+              </div>
+
+              <p class="chart-x-axis">sat</p>
+            </div>
+            <div class="bottom-card-chart col-7 flex vertical">
+              <div class="flex vertical-reverse">
+                <div class="chart-col-7 bar"></div>
+                <div class="chart-col-7-label chart-label flex"></div>
+              </div>
+
+              <p class="chart-x-axis">sun</p>
+            </div>
+          </div>
+          <div class="bottom-card-last-section flex vertical">
+            <!--flex vertically-->
+            <p class="bottom-card-total">Total this month</p>
+            <div class="bottom-card-total-section flex horizontal">
+              <!--flex horizontally-->
+              <p class="bottom-card-total-price">$478.33</p>
+              <div class="bottom-card-total-change-section flex vertical">
+                <!--flex vertically-->
+                <p class="bottom-card-total-price-change">+2.4%</p>
+                <p class="bottom-card-total-price-change-text">
+                  from last month
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <script src="/data.js" type="module"></script>
+  </body>
+</html>
