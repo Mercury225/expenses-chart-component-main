@@ -1,4 +1,4 @@
-import data from "./data.json" assert { type: "json" };
+import data from "./expenses-chart-component-main/data.json" assert { type: "json" };
 
 const Monday = document.getElementsByClassName("chart-col-1")[0];
 const Tuesday = document.getElementsByClassName("chart-col-2")[0];
