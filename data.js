@@ -1,4 +1,4 @@
-import data from "/data.json" assert { type: "json" };
+import data from "./data.json" assert { type: "json" };
 
 const Monday = document.getElementsByClassName("chart-col-1")[0];
 const Tuesday = document.getElementsByClassName("chart-col-2")[0];
@@ -16,64 +16,40 @@ const saturdayLabel = document.getElementsByClassName("chart-col-6-label")[0];
 const sundayLabel = document.getElementsByClassName("chart-col-7-label")[0];
 const getDay = () => {
   let day = new Date();
-  const getDayNumber = day.getDay();
-  switch (getDayNumber) {
-    case 0:
-      console.log("Sunday");
-      break;
-    case 1:
-      console.log("Monday");
-      break;
-    case 2:
-      console.log("Tuesday");
-      break;
-    case 3:
-      console.log("Wednesday");
-      break;
-    case 4:
-      console.log("Thursday");
-      break;
-    case 5:
-      console.log("Friday");
-      break;
-    case 6:
-      console.log("Saturday");
-      break;
-  }
-  return getDayNumber;
+  return day.getDay();
 };
-const changeBarColor = () => {
-  switch (getDay()) {
-    case 0:
-      Sunday.style.background = "var(--Cyan)";
-      break;
-    case 1:
-      Monday.style.background = "var(--Cyan)";
 
-      break;
-    case 2:
-      Tuesday.style.background = "var(--Cyan)";
-      break;
-    case 3:
-      Wednesday.style.background = "var(--Cyan)";
-      break;
-    case 4:
-      Thursday.style.background = "var(--Cyan)";
-      break;
-    case 5:
-      Friday.style.background = "var(--Cyan)";
-      break;
-    case 6:
-      Saturday.style.background = "var(--Cyan)";
-      break;
-  }
-};
-changeBarColor();
-
+/* changes bar column blue depending on the day */
+switch (getDay()) {
+  case 0:
+    Sunday.style.background = "var(--Cyan)";
+    break;
+  case 1:
+    Monday.style.background = "var(--Cyan)";
+    break;
+  case 2:
+    Tuesday.style.background = "var(--Cyan)";
+    break;
+  case 3:
+    Wednesday.style.background = "var(--Cyan)";
+    break;
+  case 4:
+    Thursday.style.background = "var(--Cyan)";
+    break;
+  case 5:
+    Friday.style.background = "var(--Cyan)";
+    break;
+  case 6:
+    Saturday.style.background = "var(--Cyan)";
+    break;
+}
+/*stores the JSON file from monday (i=0) to friday (i=6) */
 const dayArray = [];
 for (let i = 0; i < 7; i++) {
   dayArray.push(data[i].amount);
 }
+
+/*changing the bar heights on the HTML */
 
 const findBiggestNumber = Math.max(...dayArray);
 Monday.style.height = `${(dayArray[0] / findBiggestNumber) * 4}rem`;
@@ -84,10 +60,12 @@ Friday.style.height = `${(dayArray[4] / findBiggestNumber) * 4}rem`;
 Saturday.style.height = `${(dayArray[5] / findBiggestNumber) * 4}rem`;
 Sunday.style.height = `${(dayArray[6] / findBiggestNumber) * 4}rem`;
 
-mondayLabel.innerHTML = `${dayArray[0]}`;
-tuesdayLabel.innerHTML = `${dayArray[1]}`;
-wednesdayLabel.innerHTML = `${dayArray[2]}`;
-thursdayLabel.innerHTML = `${dayArray[3]}`;
-fridayLabel.innerHTML = `${dayArray[4]}`;
-saturdayLabel.innerHTML = `${dayArray[5]}`;
-sundayLabel.innerHTML = `${dayArray[6]}`;
+/*adding in the amounts for each day upon hover */
+
+mondayLabel.innerHTML = `$${dayArray[0]}`;
+tuesdayLabel.innerHTML = `$${dayArray[1]}`;
+wednesdayLabel.innerHTML = `$${dayArray[2]}`;
+thursdayLabel.innerHTML = `$${dayArray[3]}`;
+fridayLabel.innerHTML = `$${dayArray[4]}`;
+saturdayLabel.innerHTML = `$${dayArray[5]}`;
+sundayLabel.innerHTML = `$${dayArray[6]}`;
