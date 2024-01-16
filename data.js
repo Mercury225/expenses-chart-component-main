@@ -1,4 +1,4 @@
-import data from "./expenses-chart-component-main/data.json" assert { type: "json" };
+import data from "./data.json" assert { type: "json" };
 /* changed here for github linking */
 
 const Monday = document.getElementsByClassName("chart-col-1")[0];
