@@ -125,6 +125,8 @@ body {
   margin-bottom: 0.2rem;
   border-radius: 0.2rem;
   background: var(--Dark-brown);
+  font-size: 0.7rem;
+  font-weight: 700;
 }
 .chart-col-1-label,
 .chart-col-2-label,
