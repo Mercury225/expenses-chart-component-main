@@ -1,5 +1,3 @@
-import data from "./data.json" assert { type: "json" };
-
 const Monday = document.getElementsByClassName("chart-col-1")[0];
 const Tuesday = document.getElementsByClassName("chart-col-2")[0];
 const Wednesday = document.getElementsByClassName("chart-col-3")[0];
@@ -44,28 +42,32 @@ switch (getDay()) {
     break;
 }
 /*stores the JSON file from monday (i=0) to friday (i=6) */
-const dayArray = [];
-for (let i = 0; i < 7; i++) {
-  dayArray.push(data[i].amount);
-}
 
-/*changing the bar heights on the HTML */
+fetch("./data.json")
+  .then((response) => response.json())
+  .then((json) => {
+    const dayArray = [];
+    for (let i = 0; i < 7; i++) {
+      dayArray.push(json[i].amount);
+    }
+    /*changing the bar heights on the HTML */
 
-const findBiggestNumber = Math.max(...dayArray);
-Monday.style.height = `${(dayArray[0] / findBiggestNumber) * 4}rem`;
-Tuesday.style.height = `${(dayArray[1] / findBiggestNumber) * 4}rem`;
-Wednesday.style.height = `${(dayArray[2] / findBiggestNumber) * 4}rem`;
-Thursday.style.height = `${(dayArray[3] / findBiggestNumber) * 4}rem`;
-Friday.style.height = `${(dayArray[4] / findBiggestNumber) * 4}rem`;
-Saturday.style.height = `${(dayArray[5] / findBiggestNumber) * 4}rem`;
-Sunday.style.height = `${(dayArray[6] / findBiggestNumber) * 4}rem`;
+    const findBiggestNumber = Math.max(...dayArray);
+    Monday.style.height = `${(dayArray[0] / findBiggestNumber) * 4}rem`;
+    Tuesday.style.height = `${(dayArray[1] / findBiggestNumber) * 4}rem`;
+    Wednesday.style.height = `${(dayArray[2] / findBiggestNumber) * 4}rem`;
+    Thursday.style.height = `${(dayArray[3] / findBiggestNumber) * 4}rem`;
+    Friday.style.height = `${(dayArray[4] / findBiggestNumber) * 4}rem`;
+    Saturday.style.height = `${(dayArray[5] / findBiggestNumber) * 4}rem`;
+    Sunday.style.height = `${(dayArray[6] / findBiggestNumber) * 4}rem`;
 
-/*adding in the amounts for each day upon hover */
+    /*adding in the amounts for each day upon hover */
 
-mondayLabel.innerHTML = `$${dayArray[0]}`;
-tuesdayLabel.innerHTML = `$${dayArray[1]}`;
-wednesdayLabel.innerHTML = `$${dayArray[2]}`;
-thursdayLabel.innerHTML = `$${dayArray[3]}`;
-fridayLabel.innerHTML = `$${dayArray[4]}`;
-saturdayLabel.innerHTML = `$${dayArray[5]}`;
-sundayLabel.innerHTML = `$${dayArray[6]}`;
+    mondayLabel.innerHTML = `$${dayArray[0]}`;
+    tuesdayLabel.innerHTML = `$${dayArray[1]}`;
+    wednesdayLabel.innerHTML = `$${dayArray[2]}`;
+    thursdayLabel.innerHTML = `$${dayArray[3]}`;
+    fridayLabel.innerHTML = `$${dayArray[4]}`;
+    saturdayLabel.innerHTML = `$${dayArray[5]}`;
+    sundayLabel.innerHTML = `$${dayArray[6]}`;
+  });
